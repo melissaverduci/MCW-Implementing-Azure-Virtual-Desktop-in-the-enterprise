@@ -33,26 +33,26 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
   - [Troubleshooting](#troubleshooting)
-  - [Exercise 1: Configuring Azure AD Connect with AD DS [IGO WORKSHOP SKIP THIS PART]](#exercise-1-configuring-azure-ad-connect-with-ad-ds)
-    - [Task 1: Connecting to the domain controller IGO WORKSHOP SKIP THIS PART ] (#task-1-connecting-to-the-domain-controller)
-    - [Task 2: Disabling IE Enhanced Security and installing Edge [IGO WORKSHOP SKIP THIS PART]](#task-2-disabling-ie-enhanced-security-and-installing-edge)
-    - [Task 3: Creating a domain admin account [IGO WORKSHOP SKIP THIS PART] ](#task-3-creating-a-domain-admin-account)
-    - [Task 4: Configuring Azure AD Connect [IGO WORKSHOP SKIP THIS PART] ](#task-4-configuring-azure-ad-connect)
+  - [Exercise 1: Configuring Azure AD Connect with AD DS // IGO WORKSHOP SKIP THIS PART](#exercise-1-configuring-azure-ad-connect-with-ad-ds)
+    - [Task 1: Connecting to the domain controller // IGO WORKSHOP SKIP THIS PART] (#task-1-connecting-to-the-domain-controller)
+    - [Task 2: Disabling IE Enhanced Security and installing Edge // IGO WORKSHOP SKIP THIS PART](#task-2-disabling-ie-enhanced-security-and-installing-edge)
+    - [Task 3: Creating a domain admin account // IGO WORKSHOP SKIP THIS PART ](#task-3-creating-a-domain-admin-account)
+    - [Task 4: Configuring Azure AD Connect // IGO WORKSHOP SKIP THIS PART ](#task-4-configuring-azure-ad-connect)
   - [Exercise 2: Create Azure AD groups for AVD](#exercise-2-create-azure-ad-groups-for-avd)
     - [Task 1: Creating Azure AD groups](#task-1-creating-azure-ad-groups)
     - [Task 2: Assign users to groups](#task-2-assign-users-to-groups)
-  - [Exercise 3: Create an Azure Files Share for FSLogix [IGO WORKSHOP SKIP THIS PART]](#exercise-3-create-an-azure-files-share-for-fslogix)
-    - [Task 1: Create a storage account [IGO WORKSHOP SKIP THIS PART]](#task-1-create-a-storage-account)
-    - [Task 2: Create an Azure file share [IGO WORKSHOP SKIP THIS PART]](#task-2-create-an-azure-file-share)
-    - [Task 3: Enable AD authentication for your storage account [IGO WORKSHOP SKIP THIS PART]](#task-3-enable-ad-authentication-for-your-storage-account)
+  - [Exercise 3: Create an Azure Files Share for FSLogix // IGO WORKSHOP SKIP THIS PART](#exercise-3-create-an-azure-files-share-for-fslogix)
+    - [Task 1: Create a storage account // IGO WORKSHOP SKIP THIS PART](#task-1-create-a-storage-account)
+    - [Task 2: Create an Azure file share // IGO WORKSHOP SKIP THIS PART](#task-2-create-an-azure-file-share)
+    - [Task 3: Enable AD authentication for your storage account // IGO WORKSHOP SKIP THIS PART](#task-3-enable-ad-authentication-for-your-storage-account)
     - [Task 4: Configure share permissions](#task-4-configure-share-permissions)
     - [Task 5: Configure NTFS permissions for the file share](#task-5-configure-ntfs-permissions-for-the-file-share)
     - [Task 6: Configure NTFS permissions for the containers](#task-6-configure-ntfs-permissions-for-the-containers)
   - [Exercise 4: Create a gold image for AVD](#exercise-4-create-a-gold-image-for-avd)
-    - [Task 1: Create a new Virtual Machine (VM) in Azure [IGO WORKSHOP SKIP THIS PART]](#task-1-create-a-new-virtual-machine-vm-in-azure)
-    - [Task 2: Run Windows Update [IGO WORKSHOP SKIP THIS PART]](#task-2-run-windows-update)
-    - [Task 3: Prepare an AVD image [IGO WORKSHOP SKIP THIS PART]](#task-3-prepare-an-avd-image)
-    - [Task 4: Run Sysprep [IGO WORKSHOP SKIP THIS PART]](#task-4-run-sysprep)
+    - [Task 1: Create a new Virtual Machine (VM) in Azure // IGO WORKSHOP SKIP THIS PART](#task-1-create-a-new-virtual-machine-vm-in-azure)
+    - [Task 2: Run Windows Update // IGO WORKSHOP SKIP THIS PART](#task-2-run-windows-update)
+    - [Task 3: Prepare an AVD image // IGO WORKSHOP SKIP THIS PART](#task-3-prepare-an-avd-image)
+    - [Task 4: Run Sysprep // IGO WORKSHOP SKIP THIS PART](#task-4-run-sysprep)
     - [Task 5: Create a managed image from the gold Image VM](#task-5-create-a-managed-image-from-the-gold-image-vm)
   - [Exercise 5: Create a host pool for personal desktops](#exercise-5-create-a-host-pool-for-personal-desktops)
     - [Task 1: Create a new Host Pool and Workspace](#task-1-create-a-new-host-pool-and-workspace)
@@ -149,7 +149,7 @@ In this exercise, you will be configuring [Azure AD Connect](https://docs.micros
 |Azure Virtual Desktop (ARM-based model) deployment walkthrough |https://www.christiaanbrinkhoff.com/2020/05/01/windows-virtual-desktop-technical-2020-spring-update-arm-based-model-deployment-walkthrough/#NewAzurePortal-Dashboard |
   |              |            | 
 
-### Task 1: Connecting to the domain controller [IGO WORKSHOP SKIP THIS PART]
+### Task 1: Connecting to the domain controller // IGO WORKSHOP SKIP THIS PART
 
 1. Sign in to the [Azure Portal](https://portal.azure.com/).
 
@@ -175,7 +175,7 @@ In this exercise, you will be configuring [Azure AD Connect](https://docs.micros
 
     >**Note**: This is the Active Directory account from the ARM template, not the Azure AD Global Admin account. When you have trouble signing in, try typing the credentials in manually, as copy and paste may include an unnecessary space, which will cause authentication to fail.
 
-### Task 2: Disabling IE Enhanced Security and installing Edge [IGO WORKSHOP SKIP THIS PART]
+### Task 2: Disabling IE Enhanced Security and installing Edge // IGO WORKSHOP SKIP THIS PART
 
 To simplify tasks in this lab, we will start by disabling [IE Enhanced Security](https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-ie-esc).
 
@@ -195,7 +195,7 @@ To simplify tasks in this lab, we will start by disabling [IE Enhanced Security]
 
 5. Select to Agree and Download, then select to Run the .msi. Internet Explorer has been officially retired, so you will use Edge as the default browser for this lab.
 
-### Task 3: Creating a domain admin account [IGO WORKSHOP SKIP THIS PART]
+### Task 3: Creating a domain admin account // IGO WORKSHOP SKIP THIS PART
 
 By default, Azure AD Connect does not synchronize the built-in domain administrator account [ADAdmin\@MyADDomain.com](mailto:ADAdmin@MyADDomain.com). This system account has the attribute isCriticalSystemObject set to *true*, preventing it from being synchronized. While it is possible to modify this, it is not a best practice.
 
@@ -227,7 +227,7 @@ By default, Azure AD Connect does not synchronize the built-in domain administra
 
     ![This image shows how we will add this user to the Domain Admins group.](images/addusertodomainadmins.png "Add user to Domain Admins group")
 
-### Task 4: Configuring Azure AD Connect [IGO WORKSHOP SKIP THIS PART]
+### Task 4: Configuring Azure AD Connect // IGO WORKSHOP SKIP THIS PART
 
 1. On the domain controller, run the following PowerShell script to ensure TLS 1.2 is enabled. If it isn't enabled, the configuration of Azure AD Connect will fail.
 
@@ -415,7 +415,7 @@ In this exercise, you will create an Azure File share and enable SMB access via 
 |Azure Files | https://docs.microsoft.com/en-us/azure/virtual-desktop/create-profile-container-adds |
 |              |            |
 
-### Task 1: Create a storage account [IGO WORKSHOP SKIP THIS PART]
+### Task 1: Create a storage account // IGO WORKSHOP SKIP THIS PART
 
 Before you can work with an Azure file share, you need to create an Azure storage account. To create a general-purpose v2 storage account in the Azure portal, follow these steps:
 
@@ -439,7 +439,7 @@ Before you can work with an Azure file share, you need to create an Azure storag
 
 6. Select **Create**.
 
-### Task 2: Create an Azure file share [IGO WORKSHOP SKIP THIS PART]
+### Task 2: Create an Azure file share // IGO WORKSHOP SKIP THIS PART
 
 1. At the top of the Azure Portal page, in the **Search resources** field, type **storage accounts**. Select **Storage accounts** from the list.
 
@@ -459,7 +459,7 @@ Before you can work with an Azure file share, you need to create an Azure storag
 
     >**Note**: The file share quota supports a maximum of 5,120 GiB and can be managed on the File shares blade.
 
-### Task 3: Enable AD authentication for your storage account [IGO WORKSHOP SKIP THIS PART]
+### Task 3: Enable AD authentication for your storage account // IGO WORKSHOP SKIP THIS PART
 
 **Prerequisites**
 
@@ -857,7 +857,7 @@ In this exercise, you will walk through the process of creating a gold image for
 For more information on how to set up a Bastion host in Azure|https://docs.microsoft.com/en-us/azure/bastion/bastion-create-host-portal|
   |              |            | 
 
-### Task 1: Create a new Virtual Machine (VM) in Azure [IGO WORKSHOP SKIP THIS PART]
+### Task 1: Create a new Virtual Machine (VM) in Azure // IGO WORKSHOP SKIP THIS PART
 
 1. Sign in to the [Azure Portal](https://portal.azure.com/) with the same account you used to set up the storage account.
 
@@ -893,7 +893,7 @@ For more information on how to set up a Bastion host in Azure|https://docs.micro
 
     ![This image shows the download RDP button and the file that is downloaded to connect to the VM.](images/connectrdp.png "Download and run RDP file")
 
-### Task 2: Run Windows Update [IGO WORKSHOP SKIP THIS PART]
+### Task 2: Run Windows Update // IGO WORKSHOP SKIP THIS PART
 
 Despite the Azure support team's best efforts, the Marketplace images are not always up to date. Therefore, the best and most secure practice is keeping your gold image updated.
 
@@ -909,7 +909,7 @@ Despite the Azure support team's best efforts, the Marketplace images are not al
 
     ![After checking for and running any updates, the settings window shows that Windows update is up to date.](images/w10vmSettingsUpToDate.png "The settings window showing that Windows update is up to date")
 
-### Task 3: Prepare an AVD image [IGO WORKSHOP SKIP THIS PART]
+### Task 3: Prepare an AVD image // IGO WORKSHOP SKIP THIS PART
 
 **Introduction to the script**
 
@@ -1070,7 +1070,7 @@ The UI form offers the following actions:
 
         ![This image shows how to navigate to the Windows start menu and reboot the Windows 10 VM.](images/win10reboot.png "Reboot Windows 10")
 
-### Task 4: Run Sysprep [IGO WORKSHOP SKIP THIS PART]
+### Task 4: Run Sysprep // IGO WORKSHOP SKIP THIS PART
 
 1. After the VM has rebooted, reconnect your RDP session and sign in.
 
